@@ -10,7 +10,7 @@
 	<label> LAST NAME</label>
 	<input type="text" name="lastname" placeholder="Enter last name">
 	<br>
-	<button class="btn">Enter</button>
+	<button type="button" class="btn">enter</button>
 	<div class="msg_form"></div>
 	</form>
 	<a href="show_record.php">Show records</a>

@@ -3,7 +3,7 @@ $(document).ready(function(){
 		$(".btn").click(function(){
 			//alert(2);
 			record = $("#main_form").serialize();
-			//console.log(record);
+			//console.log(records);
 			$.post("../controller/add_record_action.php",record).success(
 			function(response){
 
@@ -14,6 +14,6 @@ $(document).ready(function(){
 					$(".msg_form").html(response);
 				}
 			})
-		});
+		})
 	
 })
