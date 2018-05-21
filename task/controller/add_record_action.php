@@ -15,21 +15,17 @@
 		$first=($_POST['firstname']);
 		$last=($_POST['lastname']);
 		//echo "$first";
-		$result=$obj->get_user_data($first,$last);
-			// if(is_array($result)){
+		$result=$obj->check_data($first);
+		
+		if($result[0]['cnt']>0){
+			echo "name already eists";
+		}
+		else{
 
-			// 	if($first!=$result[0]['firstname']){
-			// 		echo "user added";
-			// 	}
-			// 	else{
-					
-			// 		$_SESSION['project_first']=$result[0]['first'];
-			// 		$_SESSION['project_last']=$result[0]['last'];
-			// 		//$_SESSION['project_usemail']=$result[0]['us_email'];
-			// 		//$_SESSION['project_usmobile']=$result[0]['us_mobile']
-
-					echo "ok";
-				
+			if($obj->user_insert($first,$last)){
+				echo "successfully added";
+			}
+		}
+			
 		 }
-	
 ?>

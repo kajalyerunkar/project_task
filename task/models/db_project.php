@@ -2,15 +2,23 @@
 	require_once "db_helper.php";
 	final class db_project extends db_helper{
 		
-		function get_user_data($first,$last){
-			return parent::insert("record","first,last","'$first','$last'");
+		function check_data($first){
+			
+			return parent::select("*","record","first='$first'");
 		}
-		function get_first_name($email){
+		function user_insert($first,$last){
 
-			return db_helper::select(
-				"first","record","1");
-		}
-		
+		 	return db_helper::insert(
+		 		"record","first,last","'$first','$last'");
+		 }	
+		 function show_record(){
+		 	return parent::select("*","record","1");
+		 }
+		 function delete_records($id){
+		 	//delete from brands where id=3;
+		 return parent::delete("delete from record where id='$id'");
+		 }
 	} 
-	$obj=new db_project();
+
+	$obj= new db_project();
 ?>

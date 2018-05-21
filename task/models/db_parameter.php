@@ -8,8 +8,8 @@
 	}
 	interface db_general_function{
 		function insert($table,$columns,$values);
-		function update();
-		function delete();
+		function update($table,$record,$condition);
+		function delete($id);
 		function select($col,$tab,$condition);
 	}
 
