@@ -14,9 +14,9 @@
 		 function show_record(){
 		 	return parent::select("*","record","1");
 		 }
-		 function delete_records($id){
+		 function delete_records($data){
 		 	//delete from brands where id=3;
-		 return parent::delete("delete from record where id='$id'");
+		 return parent::delete("record","id='$data'");
 		 }
 	} 
 

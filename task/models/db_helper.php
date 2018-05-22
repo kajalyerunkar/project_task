@@ -12,13 +12,13 @@
 		function update($table,$record,$condition){
  		$sql="update $table set $record where $condition";
 		//echo $sql; 
- 		return $this->conn->query($sql) or die($this->$conn->error);	 
+ 		return $this->conn->query($sql) or die($this->conn->error);	 
  		}
 
-		function delete($id){
-			$sql="delete from table where id='$id'";
-			echo $sql;
-			return $this->conn->query($sql) or die($this->$conn->error);
+		function delete($table,$condition){
+			$sql="delete from $table where $condition";
+			// echo $sql;
+			return $this->conn->query($sql) or die($this->conn->error);
 
 			//pre($return);
 		}
