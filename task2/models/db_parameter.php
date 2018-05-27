@@ -1,7 +1,11 @@
 <?php 
 
+	
+	if(session_id()== ""){
+		session_start();
+		//echo session_id();
+	}
 	require_once "db_function.php";
-
 	interface db_parameter{
 
 		const HOSTNAME="localhost";
@@ -16,7 +20,7 @@
 		function insert($table,$columns,$values);
 		function select($col,$tab,$condition);
 		function delete();
-		function update();
+		function update($table,$record,$condition);
 
 	}
 

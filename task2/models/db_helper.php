@@ -8,7 +8,7 @@
 
 			$sql="insert into userinfo ($columns) values($values)";
 		//echo $sql; 
- 		return $this->conn->query($sql) or die($this->$conn->error);	 
+ 		return $this->conn->query($sql) or die($this->conn->error);	 
 		
 		}
 
@@ -16,7 +16,7 @@
 			 $sql="select $col from $tab where $condition";
  		// echo "$sql";
  		 //print_r($this->conn);
- 		 $result =$this->conn->query($sql) or die($this->$conn->error);
+ 		 $result =$this->conn->query($sql) or die($this->conn->error);
  		 // echo "<pre>";
  		 // print_r($result);
  		 // echo "</pre>";
@@ -42,7 +42,10 @@
  		 }
 		}
 		function delete(){}
-		function update(){}
+		function update($table,$record,$condition){
+			$sql="update $table set $record where $condition";
+			return $this->conn->query($sql) or die ($this->conn->$error);
+		}
 
 	}
 

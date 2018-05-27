@@ -170,7 +170,9 @@ Body Section
 				 
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 				<?php 
-					$result = $obj->show_items();
+				$id=$_GET['id'];
+				echo "$id";
+					$result = $obj->show_category_wise($id);
 					//pre($result);
 
 					if(is_array($result)):
@@ -192,9 +194,9 @@ Body Section
 			  </div>
 			</li>
 			<?php 
-				endforeach;
-			endif;
-			?>
+			 	endforeach;
+			 endif;
+			?> 
 			<!-- <li class="span4">
 				<div class="col-sm-4">
 			  <div class="thumbnail">

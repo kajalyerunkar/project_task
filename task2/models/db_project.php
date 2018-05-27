@@ -17,6 +17,38 @@
 				"'$name','$email','$dob','$password'"
 			);
 		}
+		function get_user_data($email){
+			return db_helper::select(
+		"*","userinfo","us_email='$email'"
+			);
+		}
+
+		function show_category(){
+			//echo "hello";
+			return $this->select("ca_id,ca_name","categories","1");
+		}
+
+		function show_items(){
+
+			return db_helper::select(
+				"*","items","1 order by pro_id desc");
+		}
+		function show_category_wise($id){
+
+			return db_helper::select(
+				"*","items","pro_id='$id' order by pro_id desc");
+		}
+		function product_insert($rec){
+			return parent::insert("items",
+				"pro_name,pro_discount,pro_price,pro_caid,pro_path,pro_description","'$rec[0]','$rec[1]','$rec[2]','$rec[3]','$rec[4]','$rec[5]'");
+		}
+
+		function get_password_userwise($email){
+			return parent::select("us_password","userinfo","us_email='$email'");
+		}
+		function update_password($pass,$email){
+			return $this->update("userinfo","us_password='$pass'","us_email='$email'");
+		}
 	}
 
 	$obj= new db_project();
