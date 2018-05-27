@@ -1,10 +1,10 @@
 $(document).ready(function(){
-	alert(1);
+	//alert(1);
 	$(".btn-register").click(function(){
 		//alert(1);
 		record = $("#register_form").serialize();
 		//console.log(record);
-		$.post("../controller/register-action.php",record).success(
+		$.post("../controller/register_action.php",record).success(
 		function(response){
 
 		$(".msg_register").html(response);
@@ -13,20 +13,20 @@ $(document).ready(function(){
 	});
 
 	$(".btn-login").click(function(){
-	 	console.log("hello");
-	// 	record = $("#login_form").serialize();
-	// 	console.log(record);
-	// 	$.post("../controller/login_action.php",record).success(
-	// 		function(response){
+	 	//console.log("hello");
+		record = $("#login_form").serialize();
+		//console.log(record);
+		$.post("../controller/login_action.php",record).success(
+			function(response){
 
-	// 			if(response=="ok"){
-	// 				window.location.href="header.php";
-	// 			}
-	// 			else
-	// 			{
-	// 				$(".msg_login").html(response);
-	// 			}
-	// 		});
+				if(response=="ok"){
+					window.location.href="../views/index.php";
+				}
+				else
+				{
+					$(".msg_login").html(response);
+				}
+			});
 
 	});
 });
