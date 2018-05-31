@@ -31,4 +31,3 @@ create table items(
 insert into items values ('','watches',1500.00,80,'branded watches',1,'a.jpg','');
 insert into items values ('','jewellry',1000.00,80,'jewellry',2,'b.jpg','');
 insert into items values ('','mens jewellry',2000.00,80,'ring',3,'e.jpg','');
-
