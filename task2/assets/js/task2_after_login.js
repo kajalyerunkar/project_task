@@ -38,4 +38,4 @@ $(document).ready(function(){
 			//$(".msg_add_product").html(res);
 		})
 
-	});
+});
