@@ -1,7 +1,7 @@
 <?php 
 	require_once "../models/db_project.php";
-	pre($_POST);
-	pre($_FILES);
+	//pre($_POST);
+	//pre($_FILES);
 
 	if(empty($_POST['pro_name'])){
 		echo "please enter product name";
@@ -37,13 +37,14 @@
 		var_dump($res);
 
 		if($res){
-			
 			$data[]=$obj->conn->real_escape_string(strip_tags(trim($_POST['pro_name'])));
-			$data[]=$obj->conn->real_escape_string(strip_tags(trim($_POST['pro_discount'])));
 			$data[]=$obj->conn->real_escape_string(strip_tags(trim($_POST['pro_price'])));
+			$data[]=$obj->conn->real_escape_string(strip_tags(trim($_POST['pro_discount'])));
 			$data[]=$obj->conn->real_escape_string(strip_tags(trim($_POST['pro_caid'])));
-			$data[]=$name;
 			$data[]=$obj->conn->real_escape_string(strip_tags(trim($_POST['pro_desc'])));
+			$data[]=$name;
+			
+			pre($data);
 
 			if($obj->product_insert($data)){
 				echo "product added";
@@ -53,5 +54,4 @@
 		else {
 				echo "file type invalid";
 			}
-
 ?>

@@ -44,7 +44,22 @@
 				<a href="#"><span class="icon-user"></span> My Account</a> 
 				<a href="register.html"><span class="icon-edit"></span> Free Register </a> 
 				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
+				<?php
+					if(isset($_COOKIE['cookie_product_id'])){
+						//echo $_COOKIE['cookie_product_id'];
+						$ans=explode(",", $_COOKIE['cookie_product_id']);
+						//print_r($ans);
+						$result=array_unique($ans);
+						//print_r($result);
+						$cartcnt=count($result);
+						//echo $cartcnt;
+					}
+					else{
+						$cartcnt=0;
+					}
+
+				?>
+				<a href="cart.php"><span class="icon-shopping-cart"></span>(<span class="cart_count"><?php echo $cartcnt ?></span>)</a>
 			</div>
 		</div>
 	</div>
@@ -74,7 +89,7 @@ Lower Header Section
 	</div>
 	<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
-	<span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
+	<span class="btn btn-mini"> <span class="icon-shopping-cart"></span></span>
 	<span class="btn btn-warning btn-mini">$</span>
 	<span class="btn btn-mini">&pound;</span>
 	<span class="btn btn-mini">&euro;</span>

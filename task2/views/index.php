@@ -180,8 +180,9 @@ Body Section
 
 				<div class="caption cntr">
 					<p><?php echo $val['pro_name'];?></p>
-					<p><strong> <?php echo $val['pro_price'];?></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
+					<h2><del> <?php echo $val['pro_discount'];?></del>
+					<?php echo $val['pro_price'];?></div>
+					<h4><a class="shopBtn add-to-cart" href="cart.php" for="<?php echo $val['pro_id']?>"> Add to cart </a></h4>
 					<div class="actionList">
 						<a class="pull-left" href="#">Add to Wish List </a> 
 						<a class="pull-left" href="#"> Add to Compare </a>

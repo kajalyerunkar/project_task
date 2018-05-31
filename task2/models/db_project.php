@@ -38,9 +38,9 @@
 			return db_helper::select(
 				"*","items","pro_id='$id' order by pro_id desc");
 		}
-		function product_insert($rec){
+		function  product_insert($rec){
 			return parent::insert("items",
-				"pro_name,pro_discount,pro_price,pro_caid,pro_path,pro_description","'$rec[0]','$rec[1]','$rec[2]','$rec[3]','$rec[4]','$rec[5]'");
+				"pro_name,pro_price,pro_discount,pro_description,pro_caid,pro_path","'$rec[0]','$rec[1]','$rec[2]','$rec[3]','$rec[4]','$rec[5]'");
 		}
 
 		function get_password_userwise($email){
@@ -48,6 +48,10 @@
 		}
 		function update_password($pass,$email){
 			return $this->update("userinfo","us_password='$pass'","us_email='$email'");
+		}
+		function show_cart_product($pro){
+			//select * from items where pro_id=1 or pro_id=2...where pro_id in (1,2)
+			return $this->select("*","items","pro_id in($pro) order by pro_id desc");
 		}
 	}
 
