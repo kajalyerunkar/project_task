@@ -50,6 +50,9 @@
 		function check_contact_count($num){
 			return self::select("count(*) as cnt","contact","cnt_num='$num'");
 		}
+		function show_grp_wise($id){
+			return parent::select("*","contact","cnt_grp='$id'");
+		}
 	}
 
 	$obj= new db_project();

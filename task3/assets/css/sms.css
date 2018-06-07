@@ -1,11 +1,12 @@
+.frst .frstdiv .col-md-3 .h3{font-family:'Dancing Script', cursive;}
 .frstdiv{background:#1e1e5a;}
 .frst a{text-decoration:none;text-transform:capitalize;display:block;padding:20px 20px;color:#fff;
 	margin-top:15px}
 .footer_03 .menu li{list-style:none;float:left;padding:5px 10px;font-weight:bold;font-size:16px;color:#fff;}
-.frstdiv{height:85px;width:100%}
+.frstdiv{height:60px;width:100%}
 .scnd{background:#3cb31e;padding-top:0px;}
 .scnd .menu_list li{list-style:none;float:left;text-align:center}
-.scnddiv a{text-decoration:none;text-transform:capitalize;display:block;padding:15px 20px;color:#fff;
+.scnddiv a{text-decoration:none;text-transform:capitalize;display:block;padding:10px 20px;color:#fff;
 	margin-top:15px}
 .footer_02, .logo{font-size:18px; padding:10px 0;background:#1e1e5a;color:#fff;}
 .footerthrd .col-md-12 .menu{background:#1e1e5a;}
