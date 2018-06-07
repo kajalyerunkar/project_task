@@ -38,6 +38,18 @@
 		function show_lib(){
 			return parent::select("*","library","1");
 		}
+		function insert_msg($libid,$txtmsg){
+			return parent::insert("msg","msg_libid,msg","'$libid','$txtmsg'");
+		}
+		function show_lib_wise($id){
+			return parent::select("*","msg","msg_libid='$id'");
+		}
+		function insert_contact_details($grp,$nm,$no){
+			return parent::insert("contact","cnt_grp,cnt_name,cnt_num","'$grp','$nm','$no'");
+		}
+		function check_contact_count($num){
+			return self::select("count(*) as cnt","contact","cnt_num='$num'");
+		}
 	}
 
 	$obj= new db_project();

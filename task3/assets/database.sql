@@ -19,3 +19,17 @@ create table library(
 	lib_id int auto_increment primary key,
 	lib_name varchar(100)
 );
+create table msg(
+	msg_id int auto_increment primary key,
+	msg_libid int,
+	msg longtext
+
+);
+
+create table contact(
+
+	cnt_id int auto_increment primary key,
+	cnt_grp int,
+	cnt_name varchar(100),
+	cnt_num bigint
+);

@@ -7,6 +7,7 @@
 		<div class="col-md-6">
 			<br><br><br><br>
 			<h3>ADD CONTACT PERSON</h3>
+			<form id="contact_form">
 			<select name="msg_grp">
 				<option value="">please select group</option>
 					<?php 
@@ -14,7 +15,8 @@
 						//pre($ans);	
 						if(is_array($ans)){
 							foreach($ans as $key=>$val){
-							echo "<option>".$val['grp_name']."</option>";
+								$id=$val['grp_id'];
+							echo "<option value='$id'>".$val['grp_name']."</option>";
 							}
 						}
 
@@ -24,6 +26,7 @@
 			<input type="text" name="txt2" placeholder="Enter mobile number"><br>
 			<button type="button" class="btn-add-contact">add contact</button><br>
 			<div class="add_contact"></div>
+		</form>
 			<br><br><br>
 		</div>
 	</div>

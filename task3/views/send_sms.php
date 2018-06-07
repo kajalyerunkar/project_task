@@ -11,11 +11,11 @@
 				if(is_array($result)):
 					foreach($result as $val):
 			?>
-				<li> 
+				<li> <a href="filter_group.php?id=<?php echo $val['grp_id'];?>">
 			<?php 
 				echo $val['grp_name'];
 			?>
-				</li>
+				</a></li>
 			<?php
 				endforeach;
 			endif;
@@ -39,18 +39,21 @@
 				if(is_array($result)):
 					foreach($result as $val):
 			?>
-				<li>
+				<li><a href="filter_library.php?id=<?php echo $val['lib_id'];?>">
 			<?php 
 				echo $val['lib_name'];
 			?>
-				</li>
+				</a></li>
 			<?php
 				endforeach;
 			endif;
 			?>
+			<br>
+			<h4>show message</h4>
 		</div>
 	</div>
 	</section>
+
 
 
 <?php 

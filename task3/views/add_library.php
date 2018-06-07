@@ -13,8 +13,8 @@
 				if(is_array($result)):
 					foreach($result as $val):
 			?>
-				<li> 
-			<?php 
+				<li>
+							<?php 
 				echo $val['lib_name'];
 			?>
 				</li>
