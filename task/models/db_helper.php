@@ -25,7 +25,7 @@
 		function select($col,$tab,$condition){
 			 $sql="select $col from $tab where $condition";
 			 //echo $sql;
-			 $result =$this->conn->query($sql) or die($this->$conn->error);
+			 $result =$this->conn->query($sql) or die($this->conn->error);
 			//echo "<pre>";
  		 // print_r($result);
  		 // echo "</pre>";

@@ -18,6 +18,12 @@
 		 	//delete from brands where id=3;
 		 return parent::delete("record","id='$data'");
 		 }
+
+		 function get_data($id){
+
+		 	return parent::select("*" ,"record","id='$id'");
+
+		 }
 	} 
 
 	$obj= new db_project();

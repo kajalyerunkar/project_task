@@ -22,7 +22,7 @@
 		}
 		else{
 
-			if($obj->user_insert($first,$last)){
+			if($obj->get_user_data($first,$last)){
 				echo "successfully added";
 			}
 		}

@@ -1,18 +1,15 @@
 <?php 
-	require_once "db_project.php";
+	require_once '../models/db_project.php';
+	// echo "hello";
+	print_r($_POST);
 
-	if(empty($_POST['nfirstname'])){
-		echo "enter first name";	
-	}
-	else if(empty($_POST['nlastname']))
-	{
-		echo "enter last name";
-	}
-	else{
+	$name  = $_POST['nfirstname'];
+	$last  = $_POST['nlastname'];
+	$id = $_POST['u_id'];
 
-		$dbfirst=$obj->get_data($_SESSION['project_usemail']);
-		pre($_SESSION['']);
-		pre($dbfirst)
-	}
+	$result= $obj->update("record","first='$name',last='$last'", "id='$id'");
+		if($result){
+			echo "ok";
+		}
 
 ?>
